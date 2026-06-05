@@ -6,7 +6,7 @@ const CONFIG = {
   anak: "Darel Daffa Yusuf",
   panggilan: "Darel",
   ayah: "Bapak Ali",
-  ibu: "Ibu",
+  ibu: "Ibu Fuji",
   acara: "Walimatul Khitan",
   hari: "Senin",
   tanggal: "8 Juni 2026",
@@ -38,5 +38,5 @@ const CONFIG = {
   // Penutup
   penutup:
     "Mohon maaf apabila terdapat kekurangan. Wassalamu'alaikum Wr. Wb.",
-  penutup_kel: "Keluarga Bapak Ali & Ibu"
+  penutup_kel: "Keluarga Bapak Ali & Ibu Fuji"
 };
