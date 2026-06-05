@@ -164,25 +164,26 @@
     setTimeout(() => { bism && bism.classList.add("show"); }, 350);
     setTimeout(() => { sub && sub.classList.add("show"); }, 600);
     setTimeout(() => { hint && hint.classList.add("show"); }, 1000);
-    // Sentuh splash = buka — tapi baru aktif setelah splash sempat tampil
-    // (mencegah klik pembuka halaman langsung menutup splash)
+    // Splash HANYA terbuka saat disentuh/diklik (tidak ada auto-buka).
+    // Jeda singkat agar splash pasti tampil dulu sebelum sentuhan aktif.
     setTimeout(() => {
       splash.addEventListener("pointerdown", () => { splash.classList.add("lift"); }, { once: true });
-    }, 1500);
-    // jika tidak disentuh, buka otomatis
-    setTimeout(() => {
-      splash.classList.add("lift");
-    }, 3200);
+    }, 700);
     splash.addEventListener("transitionend", function onLift(e) {
       if (e.propertyName !== "transform") return;
       splash.removeEventListener("transitionend", onLift);
       splash.style.display = "none";
       startMain();
     });
-    // fallback bila transitionend tak terpicu
-    setTimeout(() => {
-      if (splash.style.display !== "none") { splash.style.display = "none"; startMain(); }
-    }, 3900);
+    // fallback: HANYA jika splash sudah dipencet (punya kelas "lift")
+    // tapi transitionend tak terpicu — supaya tidak menutup sendiri.
+    const liftFallback = setInterval(() => {
+      if (!splash.classList.contains("lift")) return;
+      clearInterval(liftFallback);
+      setTimeout(() => {
+        if (splash.style.display !== "none") { splash.style.display = "none"; startMain(); }
+      }, 900);
+    }, 200);
   }
 
   /* ---------- 3. IntersectionObserver scroll reveals ---------- */
