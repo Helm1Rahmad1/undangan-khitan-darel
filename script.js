@@ -170,7 +170,10 @@
       splash.addEventListener("pointerdown", () => { splash.classList.add("lift"); }, { once: true });
     }, 700);
     splash.addEventListener("transitionend", function onLift(e) {
-      if (e.propertyName !== "transform") return;
+      // HANYA transisi milik splash sendiri (bukan animasi anak: bismillah/sub/hint
+      // yang transitionend-nya ikut menggelembung) dan hanya saat sudah "lift".
+      if (e.target !== splash || e.propertyName !== "transform") return;
+      if (!splash.classList.contains("lift")) return;
       splash.removeEventListener("transitionend", onLift);
       splash.style.display = "none";
       startMain();
