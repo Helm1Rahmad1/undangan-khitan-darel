@@ -81,6 +81,52 @@
   const nameEl = document.querySelector(".name");
   const nameOrn = document.querySelector(".name-orn");
 
+  /* ---------- Musik latar ---------- */
+  const music = document.getElementById("bg-music");
+  const musicBtn = document.getElementById("music-toggle");
+  let musicArmed = false;
+
+  function reflectMusic() {
+    if (!musicBtn) return;
+    const playing = music && !music.paused;
+    musicBtn.classList.toggle("playing", !!playing);
+    musicBtn.setAttribute("aria-pressed", playing ? "true" : "false");
+  }
+  function tryPlayMusic() {
+    if (!music) return;
+    const p = music.play();
+    if (p && p.then) p.then(reflectMusic).catch(reflectMusic);
+    else reflectMusic();
+  }
+  function revealMusic() {
+    if (!music || !musicBtn || musicArmed) return;
+    musicArmed = true;
+    setTimeout(() => musicBtn.classList.add("show"), 600);
+
+    musicBtn.addEventListener("click", () => {
+      if (music.paused) tryPlayMusic();
+      else { music.pause(); reflectMusic(); }
+    });
+    music.addEventListener("play", reflectMusic);
+    music.addEventListener("pause", reflectMusic);
+
+    // Coba autoplay; jika diblokir browser, mulai saat interaksi pertama tamu
+    tryPlayMusic();
+    const onFirstGesture = (e) => {
+      if (musicBtn.contains(e.target)) return; // tombol urus sendiri
+      tryPlayMusic();
+      if (!music.paused) removeGesture();
+    };
+    function removeGesture() {
+      window.removeEventListener("pointerdown", onFirstGesture);
+      window.removeEventListener("touchstart", onFirstGesture);
+      window.removeEventListener("keydown", onFirstGesture);
+    }
+    window.addEventListener("pointerdown", onFirstGesture);
+    window.addEventListener("touchstart", onFirstGesture);
+    window.addEventListener("keydown", onFirstGesture);
+  }
+
   function revealHero() {
     if (heroImg) heroImg.classList.add("focused");
     if (nameEl) {
@@ -93,6 +139,7 @@
     if (nameOrn) nameOrn.classList.add("reveal");
     const badge = document.querySelector(".session-badge");
     if (badge) setTimeout(() => badge.classList.add("show"), 400);
+    revealMusic();
   }
 
   function startMain() {
