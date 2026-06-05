@@ -159,10 +159,14 @@
     spawnParticles(splashParticles, 14);
     const bism = splash.querySelector(".bismillah");
     const sub = splash.querySelector(".splash-sub");
+    const hint = splash.querySelector(".splash-hint");
     // muncul bismillah
     setTimeout(() => { bism && bism.classList.add("show"); }, 350);
     setTimeout(() => { sub && sub.classList.add("show"); }, 600);
-    // diam, lalu lift
+    setTimeout(() => { hint && hint.classList.add("show"); }, 1000);
+    // sentuh splash = buka langsung (sekaligus memicu musik)
+    splash.addEventListener("pointerdown", () => { splash.classList.add("lift"); }, { once: true });
+    // jika tidak disentuh, buka otomatis
     setTimeout(() => {
       splash.classList.add("lift");
     }, 2900);

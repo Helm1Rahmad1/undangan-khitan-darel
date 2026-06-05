@@ -161,6 +161,27 @@ body.locked { overflow: hidden; height: 100vh; }
 }
 .splash-sub.show { opacity: 1; transform: translateY(0); }
 
+.splash-hint {
+  margin-top: 32px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(231,201,119,0.8);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+}
+.splash-hint.show {
+  opacity: 1;
+  transform: translateY(0);
+  animation: hintPulse 1.9s ease-in-out 0.8s infinite;
+}
+.splash-hint span { font-size: 14px; }
+@keyframes hintPulse { 0%, 100% { opacity: 0.55; } 50% { opacity: 1; } }
+
 /* ============================================================
    ORNAMEN
    ============================================================ */
