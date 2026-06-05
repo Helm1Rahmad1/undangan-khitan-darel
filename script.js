@@ -98,10 +98,10 @@
     if (p && p.then) p.then(reflectMusic).catch(reflectMusic);
     else reflectMusic();
   }
-  function revealMusic() {
+  function setupMusic() {
     if (!music || !musicBtn || musicArmed) return;
     musicArmed = true;
-    setTimeout(() => musicBtn.classList.add("show"), 600);
+    musicBtn.classList.add("show");
 
     musicBtn.addEventListener("click", () => {
       if (music.paused) tryPlayMusic();
@@ -139,8 +139,10 @@
     if (nameOrn) nameOrn.classList.add("reveal");
     const badge = document.querySelector(".session-badge");
     if (badge) setTimeout(() => badge.classList.add("show"), 400);
-    revealMusic();
   }
+
+  // Coba mulai musik sedini mungkin (saat splash), fallback ke sentuhan pertama
+  setupMusic();
 
   function startMain() {
     body.classList.remove("locked");
