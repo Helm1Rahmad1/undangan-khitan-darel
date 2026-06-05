@@ -164,12 +164,15 @@
     setTimeout(() => { bism && bism.classList.add("show"); }, 350);
     setTimeout(() => { sub && sub.classList.add("show"); }, 600);
     setTimeout(() => { hint && hint.classList.add("show"); }, 1000);
-    // sentuh splash = buka langsung (sekaligus memicu musik)
-    splash.addEventListener("pointerdown", () => { splash.classList.add("lift"); }, { once: true });
+    // Sentuh splash = buka — tapi baru aktif setelah splash sempat tampil
+    // (mencegah klik pembuka halaman langsung menutup splash)
+    setTimeout(() => {
+      splash.addEventListener("pointerdown", () => { splash.classList.add("lift"); }, { once: true });
+    }, 1500);
     // jika tidak disentuh, buka otomatis
     setTimeout(() => {
       splash.classList.add("lift");
-    }, 2900);
+    }, 3200);
     splash.addEventListener("transitionend", function onLift(e) {
       if (e.propertyName !== "transform") return;
       splash.removeEventListener("transitionend", onLift);
