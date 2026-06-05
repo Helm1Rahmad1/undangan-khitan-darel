@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Walimatul Khitan — Darel Daffa Yusuf</title>
+<meta name="description" content="Undangan Walimatul Khitan Darel Daffa Yusuf — Pukul 12.00 WIB" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Lato:wght@400;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="sesi-2 locked" data-session="2">
+
+  <!-- ============ SPLASH ============ -->
+  <div class="splash">
+    <div class="splash-particles"></div>
+    <div class="splash-inner">
+      <div class="bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+      <div class="splash-sub">Walimatul Khitan</div>
+    </div>
+  </div>
+
+  <div class="shell">
+    <div class="ambient"></div>
+    <main class="content">
+
+      <!-- ====== HERO HEADER ====== -->
+      <section class="hero">
+        <svg class="corner-orn spin-slow" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6">
+          <circle cx="50" cy="50" r="30" />
+          <path d="M50 8 L58 42 L92 50 L58 58 L50 92 L42 58 L8 50 L42 42 Z" />
+          <circle cx="50" cy="50" r="6" fill="currentColor" stroke="none" />
+        </svg>
+        <span class="eyebrow">Walimatul Khitan</span>
+        <div class="kicker-arab">وَلِيْمَةُ الْخِتَان</div>
+      </section>
+
+      <!-- ====== FOTO DAREL ====== -->
+      <section class="photo-wrap">
+        <div class="photo-frame">
+          <img id="hero-img" src="assets/darel.jpg" alt="Darel Daffa Yusuf" />
+        </div>
+      </section>
+
+      <!-- ====== NAMA ====== -->
+      <section class="name-block">
+        <h1 class="name"><span class="word">Darel</span> <span class="word">Daffa</span> <span class="word">Yusuf</span></h1>
+        <div class="name-orn">
+          <span class="grow"></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2 L15 9 L22 12 L15 15 L12 22 L9 15 L2 12 L9 9 Z" /></svg>
+          <span class="grow"></span>
+        </div>
+
+        <div class="invite-text">
+          <p class="sunda" data-bind="ajakan-sunda"></p>
+          <p class="indo" data-bind="ajakan-indo"></p>
+        </div>
+      </section>
+
+      <!-- ====== INFO ACARA ====== -->
+      <section class="info reveal">
+        <div class="divider">
+          <span class="line"></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3 L14.5 9.5 L21 12 L14.5 14.5 L12 21 L9.5 14.5 L3 12 L9.5 9.5 Z" /></svg>
+          <span class="line r"></span>
+        </div>
+        <h2 class="section-title">Waktu &amp; Tempat</h2>
+        <div class="info-card">
+          <div class="info-row stagger">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg></span>
+            <span>
+              <span class="label">Hari / Tanggal</span>
+              <span class="value" data-bind="tanggal-lengkap"></span>
+            </span>
+          </div>
+          <div class="info-row stagger">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+            <span>
+              <span class="label">Pukul · Waktu</span>
+              <span class="session-pill" data-bind="jam"></span>
+            </span>
+          </div>
+          <div class="info-row stagger">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
+            <span>
+              <span class="label">Tempat</span>
+              <span class="value"><span data-bind="alamat"></span><small data-bind="kota"></small></span>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====== COUNTDOWN ====== -->
+      <section class="countdown reveal" data-role="countdown">
+        <span class="eyebrow">Menanti Hari Bahagia</span>
+        <h2 class="section-title">Hitung Mundur</h2>
+        <div class="cd-grid">
+          <div class="cd-cell"><span class="cd-num" data-cd="days">0</span><div class="cd-label">Hari</div></div>
+          <div class="cd-cell"><span class="cd-num" data-cd="hours">0</span><div class="cd-label">Jam</div></div>
+          <div class="cd-cell"><span class="cd-num" data-cd="mins">0</span><div class="cd-label">Menit</div></div>
+          <div class="cd-cell"><span class="cd-num" data-cd="secs">0</span><div class="cd-label">Detik</div></div>
+        </div>
+      </section>
+
+      <!-- ====== AYAT ====== -->
+      <section class="ayat reveal" data-role="ayat">
+        <div class="divider">
+          <span class="line"></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3 L14.5 9.5 L21 12 L14.5 14.5 L12 21 L9.5 14.5 L3 12 L9.5 9.5 Z" /></svg>
+          <span class="line r"></span>
+        </div>
+        <div class="ayat-box">
+          <p class="ayat-arab" data-bind="ayat-arab"></p>
+          <p class="ayat-trans" data-bind="ayat-terjemah"></p>
+          <p class="ayat-src" data-bind="ayat-sumber"></p>
+        </div>
+      </section>
+
+      <!-- ====== MAPS ====== -->
+      <section class="maps reveal-scale">
+        <span class="eyebrow">Lokasi Acara</span>
+        <h2 class="section-title">Denah Tempat</h2>
+        <div class="map-frame">
+          <iframe id="map-iframe" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Peta lokasi"></iframe>
+        </div>
+        <p class="addr"><span data-bind="alamat"></span><small data-bind="kota"></small></p>
+
+        <div class="actions">
+          <a class="btn btn-map stagger" id="btn-maps" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+            Buka di Google Maps
+          </a>
+          <a class="btn btn-wa stagger" id="btn-wa" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-2.9.8.8-2.8-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-2-1.2 7.4 7.4 0 0 1-1.3-1.7c-.2-.3 0-.4.1-.5l.4-.5.3-.5c0-.1 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.6 4c.6.3 1.1.4 1.5.6a3.6 3.6 0 0 0 1.6.1c.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.4-.3z"/></svg>
+            Konfirmasi Hadir via WhatsApp
+          </a>
+        </div>
+      </section>
+
+      <!-- ====== PENUTUP ====== -->
+      <section class="closing reveal">
+        <div class="salam-arab">وَالسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ</div>
+        <p data-bind="penutup"></p>
+        <div class="kel" data-bind="penutup-kel"></div>
+        <svg class="heart spin-slow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2 L15 9 L22 12 L15 15 L12 22 L9 15 L2 12 L9 9 Z" /></svg>
+        <div class="credit">Darel Daffa Yusuf · 1447 H</div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
